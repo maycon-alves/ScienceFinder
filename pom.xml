@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.fiap</groupId>
 	<artifactId>ScienceFinderStartUp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>ScienceFinderStartUp</name>
 	<description>projeto que tem como objetivo disponibilizar um ambiente com informações acadêmicas confiáveis</description>
 	<properties>
