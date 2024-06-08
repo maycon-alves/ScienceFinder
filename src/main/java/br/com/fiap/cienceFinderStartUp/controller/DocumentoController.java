@@ -19,15 +19,15 @@ public class DocumentoController {
 
 	@Autowired
 	private DocumentoRepository documentoRepository;
-	
+
 	@GetMapping("documento/{id_documento}")
-	public Documento buscar (@PathVariable Integer id_documento) {
+	public Documento buscar(@PathVariable Integer id_documento) {
 		return documentoRepository.findById(id_documento).get();
 	}
-	
+
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/documento")
-	public Documento cadastrar (@RequestBody Documento documento) {
+	public Documento cadastrar(@RequestBody Documento documento) {
 		return documentoRepository.save(documento);
 	}
 }
