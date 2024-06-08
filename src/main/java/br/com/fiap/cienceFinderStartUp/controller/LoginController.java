@@ -1,6 +1,5 @@
 package br.com.fiap.cienceFinderStartUp.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +15,13 @@ import br.com.fiap.cienceFinderStartUp.repository.EstudanteRepository;
 @RestController
 @RequestMapping("cienceFinder/startUp/v1")
 public class LoginController {
-	
+
 	@Autowired
 	private EstudanteRepository estudanteRepository;
-	//private LoginService loginService;
-	
-//	@PostMapping("login")
-//	public List<Login> login (@RequestBody Login login) {
-//		
-//		return loginService.validaLogin(login);
-//	}
-	
+
 	@PostMapping("login")
-	public List<Estudante> login (@RequestBody Login login) {
+	public List<Estudante> login(@RequestBody Login login) {
 		return estudanteRepository.findByLogin(login.getLogin(), login.getSenha());
-	}	
-	
+	}
+
 }

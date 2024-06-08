@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -18,8 +17,8 @@ public class Documento {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "documento")
 	@Column(name = "id_identificadorDocumento")
 	private Integer idDocumento;
-	
-	@Column(name= "nm_autor")
+
+	@Column(name = "nm_autor")
 	private String autor;
 
 	@Column(name = "cd_areaEstudo")
@@ -32,20 +31,18 @@ public class Documento {
 	private String propostaEstudo;
 
 	@Column(name = "cd_documentoVerificado")
-	private String documentoVerificado; // deve ser um boolean, resolver com um enum pois o hibernate não resolveu o boolean
-
-//	@OneToOne(mappedBy = "documento")
-//	private DocumentoDetalhe documentoDetalhe;
+	private String documentoVerificado; // deve ser um boolean, resolver com um enum pois o hibernate não resolveu o
+										// boolean
 
 	public Documento() {
 		super();
 	}
 
-	public Documento(Integer idDocumento, String autor, String areaEstudoDocumento, String nomeDocumento, String propostaEstudo,
-			String documentoVerificado) {
+	public Documento(Integer idDocumento, String autor, String areaEstudoDocumento, String nomeDocumento,
+			String propostaEstudo, String documentoVerificado) {
 		super();
 		this.idDocumento = idDocumento;
-		this.autor = autor;	
+		this.autor = autor;
 		this.areaEstudoDocumento = areaEstudoDocumento;
 		this.nomeDocumento = nomeDocumento;
 		this.propostaEstudo = propostaEstudo;
@@ -99,13 +96,5 @@ public class Documento {
 	public void setDocumentoVerificado(String documentoVerificado) {
 		this.documentoVerificado = documentoVerificado;
 	}
-
-//	public DocumentoDetalhe getDocumentoDetalhe() {
-//		return documentoDetalhe;
-//	}
-//
-//	public void setDocumentoDetalhe(DocumentoDetalhe documentoDetalhe) {
-//		this.documentoDetalhe = documentoDetalhe;
-//	}
 
 }

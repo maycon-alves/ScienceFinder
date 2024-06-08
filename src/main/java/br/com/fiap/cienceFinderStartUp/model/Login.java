@@ -2,11 +2,9 @@ package br.com.fiap.cienceFinderStartUp.model;
 
 public class Login {
 
-
 	private String login;
 
 	private String senha;
-
 
 	public Login() {
 		super();
@@ -16,7 +14,7 @@ public class Login {
 		super();
 		this.login = login;
 		this.senha = senha;
-		
+
 	}
 
 	public String getLogin() {
@@ -37,8 +35,7 @@ public class Login {
 
 	@Override
 	public String toString() {
-		return "LoginEstudante {idLoginEstudante=" + login + ", senhaEstudante=" + senha
-				+ "}";
+		return "LoginEstudante {idLoginEstudante=" + login + ", senhaEstudante=" + senha + "}";
 	}
 
 }
