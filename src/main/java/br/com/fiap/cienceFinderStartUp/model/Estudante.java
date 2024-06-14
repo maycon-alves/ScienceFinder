@@ -29,6 +29,9 @@ public class Estudante {
 
 	@Column(name = "cd_senhaEstudante")
 	private String senhaEstudante;
+	
+	@Column(name = "cd_tipoUsuario")
+	private String tipoUsuario;
 
 	@Column(name = "dt_dataUltimoLogin")
 	private String ultimoLogin;
@@ -38,13 +41,14 @@ public class Estudante {
 	}
 
 	public Estudante(Integer id_estudante, String nr_documentoEstudante, String nm_nomeEstudante,
-			String cd_areaInteresse, String cd_senhaEstudante, String dt_dataUltimoLogin) {
+			String cd_areaInteresse, String cd_senhaEstudante, String cd_tipoUsuario, String dt_dataUltimoLogin) {
 		super();
 		this.idEstudante = id_estudante;
 		this.documentoEstudante = nr_documentoEstudante;
 		this.nomeEstudante = nm_nomeEstudante;
 		this.areaInteresse = cd_areaInteresse;
 		this.senhaEstudante = cd_senhaEstudante;
+		this.tipoUsuario = cd_tipoUsuario;
 		this.ultimoLogin = dt_dataUltimoLogin;
 	}
 
@@ -94,6 +98,13 @@ public class Estudante {
 
 	public void setIdEstudante(Integer idEstudante) {
 		this.idEstudante = idEstudante;
+	}
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	@Override
