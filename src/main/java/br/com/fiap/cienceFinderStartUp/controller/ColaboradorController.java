@@ -17,19 +17,19 @@ import br.com.fiap.cienceFinderStartUp.repository.ColaboradorRepository;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("cienceFinder/startUp/v1")
-public class ColaboradorController {
+public class ColaboradorController {	
 
 	@Autowired
 	private ColaboradorRepository colaboradorRepository;
-	
+
 	@GetMapping("colaborador/{id_colaborador}")
-	public Colaborador buscar (@PathVariable Integer id_colaborador) {
+	public Colaborador buscar(@PathVariable Integer id_colaborador) {
 		return colaboradorRepository.findById(id_colaborador).get();
 	}
-	
+
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/colaborador")
-	public Colaborador cadastrar (@RequestBody Colaborador colaborador) {
+	public Colaborador cadastrar(@RequestBody Colaborador colaborador) {
 		return colaboradorRepository.save(colaborador);
 	}
 }

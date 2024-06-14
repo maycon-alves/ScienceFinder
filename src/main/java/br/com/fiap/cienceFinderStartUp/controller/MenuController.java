@@ -20,18 +20,20 @@ import br.com.fiap.cienceFinderStartUp.repository.DocumentoRepository;
 public class MenuController {
 
 	@Autowired
-	private  DocumentoRepository documentoRepository;
-	
+	private DocumentoRepository documentoRepository;
+
 	@GetMapping("/avaliacao/pendentes")
-	public List<Documento> buscarPendentesAprovacao(){
-		return documentoRepository.findByVerificacao("NAO"); 
+	public List<Documento> buscarPendentesAprovacao() {
+		return documentoRepository.findByVerificacao("NAO");
 	}
-	
+
 	@PutMapping("/avaliacao/{id_identificadorDocumento}")
-	public Documento aprovacaoDocumento(@PathVariable Integer id_identificadorDocumento, @RequestParam String documentoVerificado) {
-		Documento documento = documentoRepository.findById(id_identificadorDocumento).get();;
+	public Documento aprovacaoDocumento(@PathVariable Integer id_identificadorDocumento,
+			@RequestParam String documentoVerificado) {
+		Documento documento = documentoRepository.findById(id_identificadorDocumento).get();
+		;
 		documento.setDocumentoVerificado(documentoVerificado);
 		return documentoRepository.save(documento);
 	}
-	
+
 }

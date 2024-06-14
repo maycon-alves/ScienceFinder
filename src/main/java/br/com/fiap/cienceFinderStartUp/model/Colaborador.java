@@ -1,14 +1,10 @@
 package br.com.fiap.cienceFinderStartUp.model;
 
-//import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-//import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -32,26 +28,21 @@ public class Colaborador {
 	private String areaEstudo;
 
 	@Column(name = "cd_verificacao")
-	private String verificado; // deve ser um boolean, resolver com um enum pois o hibernate não resolveu o boolean
+	private String verificado; // deve ser um boolean, resolver com um enum pois o hibernate não resolveu o
+								// boolean
 
 	@Column(name = "cd_senhaColaborador")
 	private String senhaColaborador;
 
 	@Column(name = "dt_dataUltimoLogin")
 	private String ultimoLogin;
-	
-//	@OneToOne(mappedBy = "colaborador")
-//	private LoginColaborador loginColaborador;
 
-//	@ManyToMany(mappedBy = "colaboradores")
-//	private List<Estudante> estudantes;
-	
 	public Colaborador() {
 		super();
 	}
 
-	public Colaborador(Integer idColaborador, String documento, String nome, String areaEstudo,
-			String verificado, String senhaColaborador, String ultimoLogin) {
+	public Colaborador(Integer idColaborador, String documento, String nome, String areaEstudo, String verificado,
+			String senhaColaborador, String ultimoLogin) {
 		super();
 		this.idColaborador = idColaborador;
 		this.nome = nome;
@@ -117,22 +108,5 @@ public class Colaborador {
 	public void setUltimoLogin(String ultimoLogin) {
 		this.ultimoLogin = ultimoLogin;
 	}
-
-	
-//	public LoginColaborador getLoginColaborador() {
-//		return loginColaborador;
-//	}
-//
-//	public void setLoginColaborador(LoginColaborador loginColaborador) {
-//		this.loginColaborador = loginColaborador;
-//	}
-
-//	public List<Estudante> getEstudantes() {
-//		return estudantes;
-//	}
-//
-//	public void setEstudantes(List<Estudante> estudantes) {
-//		this.estudantes = estudantes;
-//	}
 
 }

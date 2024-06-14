@@ -1,17 +1,10 @@
 package br.com.fiap.cienceFinderStartUp.model;
 
-//import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-//import jakarta.persistence.JoinColumn;
-//import jakarta.persistence.JoinTable;
-//import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -33,19 +26,12 @@ public class Estudante {
 
 	@Column(name = "cd_areaInteresse")
 	private String areaInteresse;
-	
+
 	@Column(name = "cd_senhaEstudante")
 	private String senhaEstudante;
 
 	@Column(name = "dt_dataUltimoLogin")
 	private String ultimoLogin;
-	
-//	@OneToOne(mappedBy = "estudante", cascade = CascadeType.PERSIST)
-//	private LoginEstudante loginEstudante;
-//	
-//	@ManyToMany
-//	@JoinTable(joinColumns = @JoinColumn(name = "id_estudante"), inverseJoinColumns = @JoinColumn(name = "id_colabodador"), name = "tb_estudante_colaborador")
-//	private List<Colaborador> colaboradores;
 
 	public Estudante() {
 		super();
@@ -85,7 +71,7 @@ public class Estudante {
 	public void setAreaInteresse(String cd_areaInteresse) {
 		this.areaInteresse = cd_areaInteresse;
 	}
-	
+
 	public String getSenhaEstudante() {
 		return senhaEstudante;
 	}
@@ -101,7 +87,7 @@ public class Estudante {
 	public void setUltimoLogin(String ultimoLogin) {
 		this.ultimoLogin = ultimoLogin;
 	}
-	
+
 	public Integer getIdEstudante() {
 		return idEstudante;
 	}
@@ -110,28 +96,10 @@ public class Estudante {
 		this.idEstudante = idEstudante;
 	}
 
-
-//	public List<Colaborador> getColaboradores() {
-//		return colaboradores;
-//	}
-//
-//	public void setColaboradores(List<Colaborador> colaboradores) {
-//		this.colaboradores = colaboradores;
-//	}
-	
-//	public LoginEstudante getLoginEstudante() {
-//		return loginEstudante;
-//	}
-//
-//	public void setLoginEstudante(LoginEstudante loginEstudante) {
-//		this.loginEstudante = loginEstudante;
-//	}
-
 	@Override
 	public String toString() {
 		return "Estudante [idEstudante=" + idEstudante + ", documentoEstudante=" + documentoEstudante
-				+ ", nomeEstudante=" + nomeEstudante + ", areaInteresse=" + areaInteresse
-				+"]";
+				+ ", nomeEstudante=" + nomeEstudante + ", areaInteresse=" + areaInteresse + "]";
 	}
 
 }
