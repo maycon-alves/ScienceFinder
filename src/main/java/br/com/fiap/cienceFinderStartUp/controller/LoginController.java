@@ -4,6 +4,7 @@ package br.com.fiap.cienceFinderStartUp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import br.com.fiap.cienceFinderStartUp.model.Estudante;
 import br.com.fiap.cienceFinderStartUp.model.Login;
 import br.com.fiap.cienceFinderStartUp.repository.EstudanteRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("cienceFinder/startUp/v1")
 public class LoginController {
