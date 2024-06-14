@@ -39,7 +39,7 @@ public class PesquisaService {
 				documento.setDocumentoVerificado(item.getDocumentoVerificado());
 				documento.setIdDocumento(item.getIdDocumento());
 				documento.setNomeDocumento(item.getNomeDocumento());
-				documento.setPropostaEstudo((item.getPropostaEstudo().substring(0, 10)) + "...");
+				documento.setPropostaEstudo(item.getPropostaEstudo()); //(item.getPropostaEstudo().substring(0, 10)) + "...");
 				documentosTratados.add(documento);
 			}
 			return documentosTratados;

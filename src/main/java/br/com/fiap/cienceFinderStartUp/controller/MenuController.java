@@ -2,6 +2,8 @@ package br.com.fiap.cienceFinderStartUp.controller;
 
 import java.util.List;
 
+import br.com.fiap.cienceFinderStartUp.service.AprovacaoService;
+import br.com.fiap.cienceFinderStartUp.service.PesquisaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,12 @@ public class MenuController {
 	@Autowired
 	private DocumentoRepository documentoRepository;
 
+	public MenuController(AprovacaoService aprovacaoService) {
+		this.aprovacaoService = aprovacaoService;
+	}
+
+	public AprovacaoService aprovacaoService;
+
 	@GetMapping("/avaliacao/pendentes")
 	public List<Documento> buscarPendentesAprovacao() {
 		return documentoRepository.findByVerificacao("NAO");
@@ -30,10 +38,7 @@ public class MenuController {
 	@PutMapping("/avaliacao/{id_identificadorDocumento}")
 	public Documento aprovacaoDocumento(@PathVariable Integer id_identificadorDocumento,
 			@RequestParam String documentoVerificado) {
-		Documento documento = documentoRepository.findById(id_identificadorDocumento).get();
-		;
-		documento.setDocumentoVerificado(documentoVerificado);
-		return documentoRepository.save(documento);
+		return aprovacaoService.aprovacaoDocumento(id_identificadorDocumento,documentoVerificado);
 	}
 
 }
